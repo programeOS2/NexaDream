@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ND Global | Security Portal</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #020205; /* Deep black space */
+            color: white;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            /* STARFIELD BACKGROUND */
+            background-image: radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+                              radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px);
+            background-size: 550px 550px, 350px 350px;
+            background-position: 0 0, 40px 60px;
+        }
+
+        .login-container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid #00d4ff; /* Blue border */
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
+            width: 90%;
+            max-width: 350px;
+        }
+
+        .logo-nd {
+            font-size: 80px;
+            font-weight: bold;
+            color: #00d4ff; /* Electric Blue */
+            text-shadow: 0 0 15px #00d4ff;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .sign-in-label {
+            font-size: 24px;
+            letter-spacing: 3px;
+            margin: 10px 0 30px 0;
+            text-transform: uppercase;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #333;
+            background: #111;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #00d4ff;
+            border: none;
+            color: black;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 15px;
+            font-size: 10px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h1 class="logo-nd">ND</h1>
+        <div class="sign-in-label">Sign In</div>
+        
+        <form>
+            <input type="text" placeholder="Access ID" required>
+            <input type="password" placeholder="Passkey" required>
+            <button type="submit" class="btn">Authorize Access</button>
+        </form>
+        
+        <p style="font-size: 12px; margin-top: 20px;">
+            Need an account? <a href="#" style="color: #00d4ff; text-decoration: none;">Register Now</a>
+        </p>
+    </div>
+
+    <footer>
+        © 2026 NEXADREAM GLOBAL TECHNOLOGIES INTERNATIONAL
+    </footer>
+
+</body>
+</html>
