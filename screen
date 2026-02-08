@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexaDream Global | Official Site</title>
+    <style>
+        :root {
+            --accent: #00d4ff;
+            --bg: #050505;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg);
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* TŁO Z ANIMACJĄ PULSOWANIA */
+        .main-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at center, #111 0%, #000 100%);
+        }
+
+        /* ANIMACJA WEJŚCIA TYTUŁU */
+        h1 {
+            font-size: clamp(2.5rem, 10vw, 5rem);
+            letter-spacing: 12px;
+            margin: 0;
+            background: linear-gradient(to bottom, #fff 30%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            animation: emerge 2s ease-out forwards;
+        }
+
+        @keyframes emerge {
+            0% { opacity: 0; letter-spacing: 30px; filter: blur(10px); }
+            100% { opacity: 1; letter-spacing: 12px; filter: blur(0); }
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #666;
+            letter-spacing: 4px;
+            margin-top: 15px;
+            animation: fadeIn 3s ease-in;
+        }
+
+        /* PŁYWAJĄCE KAFELKI */
+        .features {
+            display: flex;
+            gap: 20px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 20px;
+            width: 200px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            animation: float 5s ease-in-out infinite;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        footer {
+            position: absolute;
+            bottom: 30px;
+            font-size: 0.7rem;
+            color: #333;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <h1>NEXADREAM</h1>
+        <div class="subtitle">GLOBAL TECHNOLOGIES INTERNATIONAL</div>
+        
+        <div class="features">
+            <div class="card" style="animation-delay: 0s;">
+                <h3 style="color: var(--accent);">programeOS™</h3>
+                <p style="font-size: 0.8rem; color: #ccc;">Nowa era systemów operacyjnych.</p>
+            </div>
+            <div class="card" style="animation-delay: 1s;">
+                <h3 style="color: var(--accent);">NexaGuard</h3>
+                <p style="font-size: 0.8rem; color: #ccc;">Bezpieczeństwo klasy wojskowej.</p>
+            </div>
+        </div>
+
+        <footer>
+            © 2026 NEXADREAM GLOBAL | ALL RIGHTS RESERVED
+        </footer>
+    </div>
+
+</body>
+</html>
