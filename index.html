@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ND Global | Security Portal</title>
+    <style>
+        :root {
+            --accent: #00d4ff;
+            --bg: #020205;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.5s ease;
+        }
+
+        /* SPACE BACKGROUND */
+        .space-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+            z-index: -1;
+        }
+
+        /* LOGIN CARD */
+        .login-card {
+            background: rgba(10, 10, 15, 0.85);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.2);
+            backdrop-filter: blur(15px);
+            width: 90%;
+            max-width: 380px;
+            text-align: center;
+            color: white;
+            transition: opacity 0.5s ease;
+        }
+
+        .nd-logo {
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--accent);
+            text-shadow: 0 0 25px var(--accent);
+            margin: 0;
+            letter-spacing: -2px;
+        }
+
+        .portal-sub {
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: white;
+            box-sizing: border-box;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            margin-top: 20px;
+            background: var(--accent);
+            border: none;
+            border-radius: 10px;
+            color: #000;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background: #fff;
+            transform: scale(1.02);
+            box-shadow: 0 0 20px var(--accent);
+        }
+
+        .footer-links {
+            margin-top: 25px;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .footer-links span {
+            color: var(--accent);
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        /* HIDDEN WHITE SCREEN */
+        #main-app {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: white;
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="space-bg" id="bg"></div>
+
+    <div class="login-card" id="login-box">
+        <h1 class="nd-logo">ND</h1>
+        <div class="portal-sub">Access Portal</div>
+        
+        <form id="authForm">
+            <input type="email" placeholder="International Email" required>
+            <input type="password" placeholder="Access Key" required>
+            <button type="submit" class="btn">Authorize</button>
+        </form>
+
+        <div class="footer-links">
+            New to ND Global? <span onclick="goToApp()">Create Account</span>
+        </div>
+    </div>
+
+    <div id="main-app">
+        ND SYSTEM ACTIVE - READY FOR EDIT
+    </div>
+
+    <script>
+        const loginBox = document.getElementById('login-box');
+        const mainApp = document.getElementById('main-app');
+        const bg = document.getElementById('bg');
+
+        function goToApp() {
+            loginBox.style.opacity = '0';
+            bg.style.opacity = '0';
+            setTimeout(() => {
+                loginBox.style.display = 'none';
+                bg.style.display = 'none';
+                mainApp.style.display = 'flex';
+                document.body.style.background = 'white';
+            }, 500);
+        }
+
+        document.getElementById('authForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            goToApp();
+        });
+    </script>
+
+</body>
+</html>
