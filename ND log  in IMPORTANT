@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ND Global | Space Portal</title>
+    <style>
+        :root {
+            --accent: #00d4ff;
+            --bg: #020205;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            /* DEEP SPACE BACKGROUND */
+            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+        }
+
+        /* ANIMATED STARS */
+        #stars {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/123163/stars.png') repeat;
+            z-index: 0;
+            animation: move-stars 100s linear infinite;
+        }
+
+        @keyframes move-stars {
+            from { background-position: 0 0; }
+            to { background-position: -10000px 5000px; }
+        }
+
+        .login-card {
+            position: relative;
+            z-index: 1;
+            background: rgba(10, 10, 15, 0.8);
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            box-shadow: 0 0 50px rgba(0, 212, 255, 0.15);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 380px;
+            text-align: center;
+        }
+
+        /* BLUE ND LOGO */
+        .nd-title {
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--accent);
+            text-shadow: 0 0 20px var(--accent);
+            margin-bottom: 5px;
+            letter-spacing: -3px;
+        }
+
+        .sign-in-text {
+            font-size: 1.2rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: var(--accent);
+            background: rgba(0, 212, 255, 0.05);
+        }
+
+        .btn-authorize {
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            background: var(--accent);
+            border: none;
+            border-radius: 8px;
+            color: #000;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+            letter-spacing: 2px;
+        }
+
+        .btn-authorize:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        .footer-link {
+            margin-top: 25px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .footer-link a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="stars"></div>
+
+    <div class="login-card">
+        <div class="nd-title">ND</div>
+        <div class="sign-in-text">Sign In</div>
+        
+        <form>
+            <input type="text" placeholder="Global Access ID" required>
+            <input type="password" placeholder="Encryption Key" required>
+            <button type="submit" class="btn-authorize">Authorize</button>
+        </form>
+
+        <div class="footer-link">
+            New to the Galaxy? <a href="#">Create Account</a>
+        </div>
+    </div>
+
+</body>
+</html>
